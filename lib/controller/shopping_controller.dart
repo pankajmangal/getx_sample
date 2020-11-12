@@ -1,3 +1,4 @@
+import 'package:flutter_getx/data/remote_services.dart';
 import 'package:flutter_getx/modal/product_data.dart';
 import 'package:get/get.dart';
 
@@ -11,6 +12,7 @@ class ShoppingController extends GetxController{
   }
 
   void fetchProducts() async{
+    var fetchData = await RemoteServices().fetchData();
     await Future.delayed(Duration(seconds: 1));
     var productResult = [
       ProductData(
